@@ -7,3 +7,7 @@ def evenorodd():
             print("ENTERED NO. IS A ODD NO.")
     else:
         print("ERROR: PLEASE ENTER A INTEGER")
+evenorodd()        
+        
+        
+        
