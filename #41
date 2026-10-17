@@ -1,0 +1,16 @@
+#CREATING A TXT FILE AND ADDING N ROLL NO., NAMES, CLASS, MARKS TO THAT TEXT FILE.
+N=int(input("ENTER NUMBER OF STUDENTS YOU WANT TO ADD "))
+f=open("student.txt",'a+')
+for i in range(0,N):
+    rollno=input("ENTER ROLL NO. OF STUDENT: ")
+    name=input("ENTER NAME OF STUDENT: ")
+    cls=input("ENTER CLASS OF STUDENT: ")
+    marks=float(input("ENTER MARKS OF STUDENT: "))
+    rec=rollno+','+name+','+cls+','+str(marks)
+    f.write(rec)
+    f.write('\n')
+k=f.read()
+print("YOUR GIVEN DATA IS ADDED")
+f.close()
+
+
