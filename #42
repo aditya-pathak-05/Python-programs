@@ -1,0 +1,30 @@
+#CREATE A BINARY FILE THAT INCLUDES EMP_NO, NAME, AGE, SALARY IN A DICTIONARY
+import pickle
+f=open("EMPLOYEE_DAT","ab+")
+add=input("DO YOU WANT TO ADD EMPLOYEE Y/N ")
+if add.upper()=='Y':
+    d={}
+    n=int(input("ENTER NO. OF EMPLOYEES YOU WOULD LIKE TO ADD "))
+    for i in range(0,n):
+        empid=input("ENTER ID OF EMPLOYEE: ")
+        name=input("ENTER NAME OF EMPLOYEE: ")
+        age=int(input("ENTER AGE OF EMPLOYEE: "))
+        salary=int(input("ENTER SALARY OF EMPLOYEE: "))
+        d["EMP_ID"]=empid
+        d["NAME"]=name
+        d["AGE"]=age
+        d["SALARY"]=salary
+        pickle.dump(d,f)
+a=input("DO YOU WANT TO SEE THE BINARY FILE Y/N ")
+f.seek(0)
+if a.upper()=="Y":
+    try:
+        while True:
+            empdat=pickle.load(f)
+            print(empdat)
+    except EOFError:
+        f.close()
+else:
+    print("==========CLOSING BINARY FILE==========")
+    f.close()
+
